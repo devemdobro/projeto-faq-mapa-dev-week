@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+body {
+  background-color: hsl(240, 73%, 65%);
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+.container{
+  max-width: 1140px;
+  width: 980px;
+  margin: 100px auto;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  background-color: white;
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+}
+
+.container .destaque {
+  position: relative;
+  left: -120px;
+  width: 50%;
+  height: 50%;
+}
+
+.container .destaque, .container .container-acordeon {
+  margin: 50px 0;
+}
+
+.container .container-acordeon {
+  flex: 0 0 40%;
+}
+
+.container .items-acordeon {
+  cursor: pointer;
+}
+
+.container .items-acordeon h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+.item-acordeon .pergunta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-acordeon .pergunta h2 {
+  font-size: 18px;
+}
+
+.item-acordeon .seta {
+  width: 15px;
+  align-self: center;
+}
+
+hr.linha {
+  border-top: 1px solid black;
+  opacity: 0.2;
+  margin: 20px 0;
+}
+
+.resposta {
+  display: none;
+}
+
+.ativo h2 {
+  font-weight: 700;
+}
+
+.ativo .resposta {
+  display: block;
+  padding-top: 20px;
+}
+
+.ativo .seta {
+  transform: rotate(180deg)
+}
