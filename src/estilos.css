@@ -14,63 +14,61 @@ main {
 }
 
 .container {
-  max-width: 980px;
   width: 980px;
+  max-width: 980px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 25px 50px -12px;
   background-color: white;
   display: flex;
-  border-radius: 30px;
   align-items: center;
+  border-radius: 30px;
 }
 
-.container .destaque {
+.container .imagem-destaque {
   position: relative;
   left: -120px;
   width: 50%;
-  height: 50%;
-}
-
-.container .destaque, .container .container-acordeon {
   margin: 50px 0;
 }
 
-.container .container-acordeon {
+.container .container-faq {
   flex: 0 0 40%;
 }
 
-.container .items-acordeon {
+.container .items-faq {
   cursor: pointer;
 }
 
-.container .items-acordeon h1 {
+.container .items-faq h1 {
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 30px;
-  font-family: 'Kumbh Sans', sans-serif;
 }
 
-.item-acordeon .pergunta {
+.item-faq .pergunta {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   transition: 0.2s ease;
 }
 
-.item-acordeon .pergunta:hover {
+.item-faq .pergunta:hover {
   color: hsl(14, 88%, 65%);
 }
 
-.item-acordeon .pergunta h2 {
+.item-faq .pergunta h2 {
   font-size: 18px;
+  flex-basis: 85%;
 }
 
-.item-acordeon .seta {
+.item-faq .pergunta .seta {
+  flex-basis: 10%;
+}
+
+.item-faq .seta img {
   width: 15px;
-  align-self: center;
 }
 
 hr.linha {
-  border-top: 1px solid black;
+  border-top: 1px solid #000;
   opacity: 0.2;
   margin: 20px 0;
 }
@@ -90,4 +88,25 @@ hr.linha {
 
 .ativo .seta {
   transform: rotate(180deg)
+}
+
+@media(max-width: 1280px) {
+  .container {
+    flex-direction: column;
+    max-width: 300px;
+  }
+
+  .container h1 {
+    text-align: center;
+  }
+
+  .container .items-faq { 
+    width: 80%;
+    margin: auto;
+  }
+  
+  .container .imagem-destaque {
+    left: 0;
+    margin: 30px 0;
+  }
 }

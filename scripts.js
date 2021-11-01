@@ -8,7 +8,7 @@
     
     // SENAO FICA ABERTA 
 
-const itemsAcordeon = document.querySelectorAll('.item-acordeon');
+const itemsAcordeon = document.querySelectorAll('.item-faq');
 
 itemsAcordeon.forEach(item => {
     item.addEventListener('click', () => {
