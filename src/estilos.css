@@ -1,19 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 
 body {
-  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
-  height: 100vh;
-  font-family: 'Kumbh Sans', sans-serif;
+  background: linear-gradient(#af67e9, #6565e7);
+  font-family: "Kumbh Sans", sans-serif;
+}
 
+main {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
-.container {
+.faq {
   width: 70%; /* se for uma tela menor que 980px vai se adaptar a 70% */
   max-width: 960px; /* quando chegar em 980px para de aumentar */
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 25px 50px -12px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 50px -12px;
   background-color: #fff;
 
   display: flex;
@@ -21,55 +23,62 @@ body {
   border-radius: 30px;
 }
 
-.container .imagem-destaque {
+.faq .ilustracao {
   position: relative;
   left: -120px;
   width: 50%;
   margin: 50px 0;
 }
 
-.container .container-faq {
-  flex-basis: 40%;
+.faq .conteudo {
+  width: 40%;
+  padding: 30px 0;
 }
 
-.container .items-faq {
-  cursor: pointer;
-}
-
-.container .items-faq h1 {
+.faq .conteudo h1 {
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 30px;
 }
 
-.item-faq .pergunta {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
+.faq .items {
+  overflow-y: auto;
+  max-height: 400px;
+  padding-right: 10px;
+}
+
+.faq .items .item {
+  cursor: pointer;
+  background-image: url(/src/imagens/icone-seta-pra-baixo.png);
+  background-repeat: no-repeat;
+  background-position: top 8px right 0;
+  background-size: 12px;
+
+  border-bottom: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.faq .items .item:last-child {
+  border-bottom: none;
+}
+
+.item .pergunta {
+  padding-bottom: 15px;
   transition: 0.2s ease;
 }
 
-.item-faq .pergunta:hover {
-  color: hsl(14, 88%, 65%);
+.item .pergunta:hover {
+  color: #f47c57;
 }
 
-.item-faq .pergunta h2 {
+.item .pergunta {
   font-size: 18px;
-  flex-basis: 90%;
-}
-
-.item-faq .seta img {
-  width: 15px;
-}
-
-hr.linha {
-  border-top: 1px solid #000;
-  opacity: 0.2;
-  margin: 20px 0;
+  width: 90%;
 }
 
 .resposta {
   display: none;
+  padding: 0 0 15px;
 }
 
 .ativo h2 {
@@ -78,30 +87,47 @@ hr.linha {
 
 .ativo .resposta {
   display: block;
-  padding-top: 20px;
 }
 
-.ativo .seta {
-  transform: rotate(180deg)
+.faq .items .item.ativo {
+  background-image: url(/src/imagens/icone-seta-pra-cima.png);
 }
 
-@media(max-width: 1280px) {
-  .container {
+@media (max-width: 1280px) {
+  .faq {
     flex-direction: column;
-    max-width: 375px;
+    max-width: 80%;
+    border-radius: 20px;
   }
 
-  .container h1 {
+  .faq .conteudo {
+    width: 100%;
+  }
+
+  .faq .conteudo h1 {
+    font-size: 24px;
     text-align: center;
   }
 
-  .container .items-faq { 
+  .faq .items {
     width: 80%;
     margin: auto;
   }
 
-  .container .imagem-destaque {
+  .faq .ilustracao {
     left: 0;
     margin: 30px 0;
   }
+}
+
+@media (max-width: 425px) {
+  main {
+    padding: 15% 0;
+    height: 100%;
+  }
+
+  .faq .items {
+    overflow-y: hidden;
+    max-height: 100%;
+  }  
 }

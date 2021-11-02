@@ -1,4 +1,4 @@
-const itemsAcordeon = document.querySelectorAll('.item-faq');
+const itemsAcordeon = document.querySelectorAll('.item');
 
 itemsAcordeon.forEach(item => {
     item.addEventListener('click', () => {
