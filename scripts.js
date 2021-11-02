@@ -1,23 +1,21 @@
-const itemsAcordeon = document.querySelectorAll('.item');
+const itemsPerguntasRespostas = document.querySelectorAll('.item');
 
-itemsAcordeon.forEach(item => {
+itemsPerguntasRespostas.forEach(item => {
     item.addEventListener('click', () => {
-
-        // VERIFICAR SE ESTA ATIVO
+        // VERIFICAR SE ESTÁ ATIVO
         const estaAtivo = item.classList.contains('ativo');
 
-        // SE NAO ESTA ATIVO
+        // SE NÃO ESTA ATIVO
         if(!estaAtivo) {
-            // CASO UMA PERGUNTA ABRA AS OUTRAS DEVEM FECHAR
-
-            itemsAcordeon.forEach(item => item.classList.remove('ativo'));
+            // BUSCA TODAS AS PERGUNTAS NOVAMENTE E REMOVE A CLASSE ATIVO DELAS PRA QUE TODAS FECHEM
+            itemsPerguntasRespostas.forEach(item => item.classList.remove('ativo'));
             
-            // DEVE ABRIR
-            item.classList.add('ativo')
+            // ABRE A PERGUNTA ATUAL
+            item.classList.add('ativo');
 
-        // SE ESTA ATIVO
-        } else { 
-            item.classList.remove('ativo')
+        } else {
+            // SE ESTA ATIVO, REMOVE A CLASSE ATIVO PARA FECHAR A RESPOSTA
+            item.classList.remove('ativo');
         }
     })
 })
