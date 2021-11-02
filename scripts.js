@@ -1,13 +1,3 @@
-// SE CLICARMOS NO ITEM DO ACORDEON
-
-// CASO A RESPOSTA NÃO ESTEJA ABERTA
-
-    // DEVE ABRIR
-
-        // CASO UMA PERGUNTA ABRA AS OUTRAS DEVEM FECHAR
-    
-    // SENAO FICA ABERTA 
-
 const itemsAcordeon = document.querySelectorAll('.item-faq');
 
 itemsAcordeon.forEach(item => {
