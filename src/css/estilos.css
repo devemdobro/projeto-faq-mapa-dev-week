@@ -118,7 +118,6 @@ main {
   .faq {
     flex-direction: column;
     width: 90%;
-    border-radius: 20px;
   }
 
   .faq .conteudo {
@@ -140,7 +139,7 @@ main {
   }
 
   .faq .ilustracao {
-    width: 30%;
+    width: 40%;
     left: 0;
     margin: 30px 0;
   }
@@ -149,15 +148,8 @@ main {
 @media (max-width: 425px) {
   .faq {
     height: 570px;
-    padding: 0;
   }
-
-  .faq .ilustracao {
-    width: 50%;
-    left: 0;
-    margin: 30px 0;
-  }
-
+  
   /* .faq .items {
     overflow-y: hidden;
     max-height: 100%;
