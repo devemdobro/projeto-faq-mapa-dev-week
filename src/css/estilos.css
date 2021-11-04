@@ -7,29 +7,33 @@
 }
 
 html{
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient() */
   background: linear-gradient(#af67e9, #6565e7);
-  min-height: 100%;
+  /* min-height: 100%; */
 }
 
 body {  
   font-family: "Kumbh Sans", sans-serif;
 }
 
-img {
+/* img {
   max-width: 100%;
-}
+} */
 
 main {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .faq {
   width: 70%; /* se for uma tela menor que 980px vai se adaptar a 70% */
-  max-width: 960px; /* quando chegar em 980px para de aumentar */
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 50px -12px;
+  max-width: 980px; /* quando chegar em 980px para de aumentar */
+  min-height: 450px;
+
+  /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow*/
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.3);
   background-color: #fff;
 
   display: flex;
@@ -45,8 +49,8 @@ main {
 }
 
 .faq .conteudo {
-  width: 40%;
-  padding: 30px 0;
+  flex-basis: 40%;
+  padding-bottom: 20px;
 }
 
 .faq .conteudo h1 {
@@ -55,11 +59,15 @@ main {
   margin-bottom: 30px;
 }
 
-.faq .items {
+.faq .items { 
+  list-style-type: none;
+}
+
+/* .faq .items {
   overflow-y: auto;
   max-height: 400px;
   padding-right: 10px;
-}
+} */
 
 .faq .items .item {
   cursor: pointer;
@@ -72,11 +80,12 @@ main {
   margin: 10px 0;
 }
 
+/* pseudo classes */
 .faq .items .item:last-child {
   border-bottom: none;
 }
 
-.item .pergunta {
+.faq .items .item .pergunta {
   padding-bottom: 15px;
   transition: 0.2s ease;
   font-size: 18px;
@@ -92,6 +101,7 @@ main {
   padding: 0 0 15px;
 }
 
+/* ESTILOS DE ITEM DE FAQ ATIVO */
 .ativo h2 {
   font-weight: 700;
 }
@@ -104,10 +114,10 @@ main {
   background-image: url(../imagens/icone-seta-pra-cima.png);
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1140px) {
   .faq {
     flex-direction: column;
-    max-width: 80%;
+    width: 90%;
     border-radius: 20px;
   }
 
@@ -125,20 +135,31 @@ main {
     margin: auto;
   }
 
+  .faq .items .item .pergunta { 
+    font-size: 16px;
+  }
+
   .faq .ilustracao {
+    width: 30%;
     left: 0;
     margin: 30px 0;
   }
 }
 
 @media (max-width: 425px) {
-  main {
-    padding: 15% 0;
-    height: 100%;
+  .faq {
+    height: 570px;
+    padding: 0;
   }
 
-  .faq .items {
+  .faq .ilustracao {
+    width: 50%;
+    left: 0;
+    margin: 30px 0;
+  }
+
+  /* .faq .items {
     overflow-y: hidden;
     max-height: 100%;
-  }  
+  }   */
 }
