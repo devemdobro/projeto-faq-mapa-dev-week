@@ -24,14 +24,10 @@ main {
 }
 
 .faq {
-  width: 70%; /* se for uma tela menor que 980px vai se adaptar a 70% */
-  max-width: 980px; /* quando chegar em 980px para de aumentar */
+  width: 65%;  
   min-height: 450px;
-
-  /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow*/
-  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.3); /*https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow*/
   background-color: #fff;
-
   display: flex;
   align-items: center;
   border-radius: 30px;
@@ -45,7 +41,7 @@ main {
 }
 
 .faq .conteudo {
-  flex-basis: 40%;
+  width: 40%;
   padding-bottom: 20px;
 }
 
@@ -59,19 +55,12 @@ main {
   list-style-type: none;
 }
 
-/* .faq .items {
-  overflow-y: auto;
-  max-height: 400px;
-  padding-right: 10px;
-} */
-
 .faq .items .item {
   cursor: pointer;
   background-image: url(../imagens/icone-seta-pra-baixo.png);
   background-repeat: no-repeat;
   background-position: top 8px right 0;
   background-size: 12px;
-
   border-bottom: 1px solid #ccc;
   margin: 10px 0;
 }
@@ -94,15 +83,15 @@ main {
 
 .resposta {
   display: none;
-  padding: 0 0 15px;
+  padding-bottom: 15px;
 }
 
 /* ESTILOS DE ITEM DE FAQ ATIVO */
-.ativo h2 {
+.faq .items .item.ativo h2 {
   font-weight: 700;
 }
 
-.ativo .resposta {
+.faq .items .item.ativo .resposta {
   display: block;
 }
 
@@ -110,6 +99,8 @@ main {
   background-image: url(../imagens/icone-seta-pra-cima.png);
 }
 
+
+/* RESPONSIVO */
 @media (max-width: 1140px) {
   .faq {
     flex-direction: column;
@@ -151,3 +142,4 @@ main {
     max-height: 100%;
   }   */
 }
+
