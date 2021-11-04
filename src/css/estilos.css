@@ -6,13 +6,17 @@
   font-weight: 300;
 }
 
-img {
-  max-width: 100%;
+html{
+  background: linear-gradient(#af67e9, #6565e7);
+  min-height: 100%;
 }
 
-body {
-  background: linear-gradient(#af67e9, #6565e7);
+body {  
   font-family: "Kumbh Sans", sans-serif;
+}
+
+img {
+  max-width: 100%;
 }
 
 main {
@@ -59,7 +63,7 @@ main {
 
 .faq .items .item {
   cursor: pointer;
-  background-image: url(src/imagens/icone-seta-pra-baixo.png);
+  background-image: url(../imagens/icone-seta-pra-baixo.png);
   background-repeat: no-repeat;
   background-position: top 8px right 0;
   background-size: 12px;
@@ -97,7 +101,7 @@ main {
 }
 
 .faq .items .item.ativo {
-  background-image: url(src/imagens/icone-seta-pra-cima.png);
+  background-image: url(../imagens/icone-seta-pra-cima.png);
 }
 
 @media (max-width: 1280px) {
