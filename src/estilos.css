@@ -75,15 +75,12 @@ main {
 .item .pergunta {
   padding-bottom: 15px;
   transition: 0.2s ease;
+  font-size: 18px;
+  width: 90%;
 }
 
 .item .pergunta:hover {
   color: #f47c57;
-}
-
-.item .pergunta {
-  font-size: 18px;
-  width: 90%;
 }
 
 .resposta {
