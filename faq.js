@@ -1,8 +1,10 @@
 const itemsPerguntasRespostas = document.querySelectorAll('.item');
 
+console.log(itemsPerguntasRespostas)
+
 itemsPerguntasRespostas.forEach(function(item) {
     item.addEventListener('click', function() {
-        // VERIFICAR SE ESTÁ ATIVO
+        // verificar se a pergunta clicada esta ativa 
         const estaAtivo = item.classList.contains('ativo');
 
         // SE NÃO ESTA ATIVO
