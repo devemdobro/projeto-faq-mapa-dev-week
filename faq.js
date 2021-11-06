@@ -1,7 +1,7 @@
 const itemsPerguntasRespostas = document.querySelectorAll('.item');
 
-itemsPerguntasRespostas.forEach(item => {
-    item.addEventListener('click', () => {
+itemsPerguntasRespostas.forEach(function(item) {
+    item.addEventListener('click', function() {
         // VERIFICAR SE ESTÁ ATIVO
         const estaAtivo = item.classList.contains('ativo');
 
