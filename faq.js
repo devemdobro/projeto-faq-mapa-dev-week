@@ -1,23 +1,28 @@
-const itemsPerguntasRespostas = document.querySelectorAll('.item');
+// BUSCAR OS ITENS DA TELA 
+const itensPerguntasERespostas = document.querySelectorAll('.item')
 
-console.log(itemsPerguntasRespostas)
-
-itemsPerguntasRespostas.forEach(function(item) {
+// ENTENDER QUE O ITEM FOI CLICADO 
+itensPerguntasERespostas.forEach(function(item) {
     item.addEventListener('click', function() {
-        // verificar se a pergunta clicada esta ativa 
-        const estaAtivo = item.classList.contains('ativo');
+        
+        // VERIFICAR SE A PERGUNTA CLICADA ESTA ATIVA 
+        const estaAtiva = item.classList.contains('ativo')
+        
+        // EU PRECISO FECHAR TODAS
+        itensPerguntasERespostas.forEach(function(item) {
+            item.classList.remove('ativo')
+        })
 
-        // SE NÃO ESTA ATIVO
-        if(!estaAtivo) {
-            // BUSCA TODAS AS PERGUNTAS NOVAMENTE E REMOVE A CLASSE ATIVO DELAS PRA QUE TODAS FECHEM
-            itemsPerguntasRespostas.forEach(function(item) { item.classList.remove('ativo') });
-            
-            // ABRE A PERGUNTA ATUAL
-            item.classList.add('ativo');
-
+        // SE A PERGUNTA NÃO ESTA ATIVA 
+        if(!estaAtiva) {
+            // ABRIR A RESPOSTA ATUAL
+            item.classList.add('ativo')
+        
+        // SE A PERGUNTA ESTIVER ATIVA
         } else {
-            // SE ESTA ATIVO, REMOVE A CLASSE ATIVO PARA FECHAR A RESPOSTA
-            item.classList.remove('ativo');
+            // DESATIVAR (REMOVERIA A CLASSE ATIVO)
+            item.classList.remove('ativo')
         }
     })
 })
+
